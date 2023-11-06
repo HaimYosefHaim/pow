@@ -1,0 +1,32 @@
+id: "sl_flex_restrictions_connect"
+label: "Flex - Restrictions"
+package: "Flex"
+description: "Component provides connect_profile.restriction configuration files by logic"
+category: "Flex|Common|Utility"
+quality: "production"
+root_path: "app/flex/component/common/sl_flex_restrictions"
+requires:
+  - name: "connect_app_framework_common"
+  - name: "device_has_radio"
+
+#------- Set provided component name
+provides:
+  - name: "sl_flex_restrictions"
+    allow_multiple: true
+
+#-------- Include restriction config json file --------
+#
+# Connect profile restrictions
+#
+config_file:
+  - path: "connect_profile.restriction"
+    directory: "rail"
+    unless:
+      - "device_sdid_200"
+      - "device_is_module"
+
+#-------- Hides Component for user in Studio ---------
+ui_hints:
+  visibility: never
+
+

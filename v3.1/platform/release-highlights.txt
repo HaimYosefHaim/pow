@@ -1,0 +1,25 @@
+What's new in Gecko Platform 3.1.2.0
+* Added support for EFM32PG22 products.
+* mbed TLS code size and performance updates.
+
+What's new in Gecko Platform 3.1.1.0
+* Fixed an issue that could prevent the MX25 Flash to shut down properly.
+* Some bug fixes in Power Manager.
+* Added support for new ZG14 OPN.
+
+What's new in Gecko Platform 3.1.0.0
+* Peripherals: Include handling pcntModeOvsQuadx modes in PCNT_Init
+* Services: New NVM3 function that enables reading only parts of a data object
+* Common:
+  * Platform converted to use BASEPRI interrupt levels, vs. PRIMASK interrupt enable/disable
+  * MCU SDK 6.0 integrated into Common platform.
+* Security:
+  * Mbed TLS updated to version 2.24.0
+  * Added attestation support in SE Manager
+* Operating System: Platform components are now compatible with any kernel providing a CMSIS-RTOS2 implementation.
+* Examples:
+  * Added alpha quality Hello World and Micro Speech examples for TensorFlow Lite for Microcontrollers.
+  * Added several common sample apps for EFM and EFR devices.
+  * Removed several MCU sample apps.
+* Boards and External Devices: Added better support for 60 Ohm ESR crystals.
+* Other Platform Components: Added alpha support for TensorFlow Lite for Microcontrollers version 2.3.1.

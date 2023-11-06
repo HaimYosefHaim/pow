@@ -1,0 +1,22 @@
+id: psa_crypto_hkdf
+package: platform
+label: PSA Crypto support for HKDF
+description:
+  "This component provides support for key derivation using HKDF in PSA Crypto.\n
+
+  At the moment the 'Mbed TLS Support for HKDF' component is required  \
+  (automatically included) for HKDF operation via the PSA Crypto key derivation \
+  APIs. Hardware acceleration of HKDF is only supported on Vault devices and \
+  only for opaque keys but cannot operate standalone (currently), without the \
+  'Mbed TLS Support for HKDF' component which also provides suppport for HKDF \
+  with plaintext keys on all devices using the classic mbedTLS libraries."
+category: Platform|Security
+quality: production
+provides:
+  - name: psa_crypto_hkdf
+requires:
+  - name: psa_crypto
+  - name: mbedtls_hkdf
+template_contribution:
+  - name: psa_crypto_config
+    value: PSA_WANT_ALG_HKDF

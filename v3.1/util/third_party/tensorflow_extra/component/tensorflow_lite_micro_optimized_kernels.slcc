@@ -1,0 +1,35 @@
+id: tensorflow_lite_micro_optimized_kernels
+package: platform
+label: TensorFlow Lite Micro Optimized Kernels
+description: >
+  This component includes kernel implementations that are optimized for certain CPU
+  architectures. By including this component, the optimized kernel implementations
+  will be used instead of the reference kernels.
+
+  The kernels which have optimized implementations are: add, conv, depthwise_conv,
+  fully_connected, mul, pooling and softmax. Remaining kernels fallback to use the
+  reference kernel implementations.
+category: Platform|Machine Learning|TensorFlow
+quality: alpha
+provides:
+  - name: tensorflow_kernel_implementation
+    allow_multiple: true 
+  - name: tensorflow_kernel_optimized_add
+  - name: tensorflow_kernel_optimized_conv
+  - name: tensorflow_kernel_optimized_depthwise_conv
+  - name: tensorflow_kernel_optimized_fully_connected
+  - name: tensorflow_kernel_optimized_mul
+  - name: tensorflow_kernel_optimized_pooling
+  - name: tensorflow_kernel_optimized_softmax
+requires: 
+  - name: tensorflow_dependency_cmsis_nn
+  - name: tensorflow_lite_micro_reference_kernels
+root_path: util/third_party/tensorflow/tensorflow/lite/micro/kernels/cmsis-nn
+source:
+  - path: add.cc
+  - path: conv.cc
+  - path: depthwise_conv.cc
+  - path: fully_connected.cc
+  - path: mul.cc
+  - path: pooling.cc
+  - path: softmax.cc

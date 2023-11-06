@@ -1,0 +1,68 @@
+id: psa_crypto
+package: platform
+label: PSA Crypto
+description:
+  "This component provides the PSA Crypto API, a high-level interface to various \
+  cryptographic functions.\n
+
+  In order to enable the PSA Crypto core functionality, this component includes \
+  function APIs, a set of PSA drivers for various devices from Silicon Labs, \
+  and built-in support for the Mbed TLS library functions. The Mbed TLS software \
+  functions are provided as a mean to 'fallback' when there is no support for \
+  hardware acceleration on the device.\n 
+
+  Certain algorithms need to be manually enabled in order to be supported: \
+  this is done by selecting the corresponding component. In order to use ECDH \
+  for key agreement, for example, the 'PSA Crypto Support for ECDH' component \
+  needs to be selected. Note that just because a separate component does not \
+  exist for a certain algorithm, it does not mean that it is not supported and \
+  accelerated -- this is a work in progress.\n
+
+  For configuration of PSA Crypto, please refer to the 'Mbed TLS' component."
+category: Platform|Security
+quality: production
+component_root_path: util/third_party/crypto/mbedtls
+template_file:
+  - path: ../sl_component/sl_mbedtls_support/config/template/psa_crypto_config_autogen.h.jinja
+config_file:
+  - path: ../sl_component/sl_mbedtls_support/config/template/psa_crypto_config.h
+    file_id: psa_crypto_config
+source:
+  - path: library/psa_crypto.c
+  - path: library/psa_crypto_driver_wrappers.c
+  - path: library/psa_crypto_slot_management.c
+  - path: library/psa_crypto_storage.c
+  - path: library/psa_its_file.c
+    unless: [psa_its]
+include:
+  - path: library
+    file_list:
+      - path: check_crypto_config.h
+      - path: psa_crypto_core.h
+      - path: psa_crypto_driver_wrappers.h
+      - path: psa_crypto_invasive.h
+      - path: psa_crypto_its.h
+      - path: psa_crypto_se.h
+      - path: psa_crypto_service_integration.h
+      - path: psa_crypto_slot_management.h
+      - path: psa_crypto_storage.h
+requires:
+  - name: mbedtls_cipher
+  - name: psa_driver
+    condition: [device_series_1]
+  - name: psa_driver
+    condition: [device_series_2]
+  - name: psa_crypto_common
+provides:
+  - name: psa_crypto
+  - name: psa_crypto_config
+  - name: mbedtls
+    condition: [psa_crypto]
+define:
+  - name: MBEDTLS_PSA_CRYPTO_CONFIG_FILE
+    value: "<psa_crypto_config.h>"
+template_contribution:
+  - name: mbedtls_config
+    value: MBEDTLS_PSA_CRYPTO_C
+  - name: mbedtls_config
+    value: MBEDTLS_PSA_CRYPTO_CONFIG

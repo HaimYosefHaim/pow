@@ -1,0 +1,10 @@
+<?xml version="1.0" ?>
+<contentItems>
+	<contentItemData category="Getting Started" description="Provides an overview and hyperlinks to all packaged documentation." itemURI="file:slMCU-index.html" label="Documentation Index" priority="9"/>
+	<contentItemData category="Release Notes" description="A detailed overview of highlights, fixes and improvements in this release of 32-bit MCU SDK.
+" itemURI="file:MCU_SDK_Release_Notes.pdf" label="32-bit MCU SDK Release Notes" priority="1"/>
+	<contentItemData category="Release Notes" description="A detailed overview of the changes, additions, and fixes in the Gecko Platform components. The Gecko Platform includes EMLIB, EMDRV, RAIL Library, NVM3, and the component-based infrastructure.
+" itemURI="file:gecko-platform-release-notes.pdf" label="Gecko Platform Release Notes" priority="1">
+		<property key="sdkAndProtocolTags" value="Bluetooth Bluetooth\ Mesh Zigbee Proprietary Thread"/>
+	</contentItemData>
+</contentItems>

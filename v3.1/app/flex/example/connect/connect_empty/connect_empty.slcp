@@ -1,0 +1,76 @@
+project_name: connect_empty
+label: "Flex (Connect) - SoC Empty"
+package: Flex
+description: "The Connect Empty project is a barebone Connect app that can be a basis of streamlined proprietary solutions."
+category: Connect Examples
+quality: production
+
+#---------------- UC/UP components -------------------
+component:
+  - id: radio_config_simple_connect_singlephy
+  - id: sl_system
+  - id: device_init
+  - id: connect_app_framework_common
+  - id: token_manager
+#------------Memory Protection Unit-------------------
+  - id: mpu
+
+#-----------Need while connect uses printf -----------
+  - id: printf
+  - id: iostream_usart
+    instance:
+      - vcom
+  - id: iostream_retarget_stdio
+
+#-------------- Restriction rules -------------------
+  - id: sl_flex_restrictions_connect
+  - id: sl_flex_restrictions_long_range
+
+#----------------- Require list ----------------------
+requires:
+  - name: a_radio_config
+
+#----------------- Project files ---------------------
+include:
+  - path: .
+    file_list:
+    - path: app_init.h
+    - path: app_process.h
+
+source:
+  - path: main.c
+  - path: app_init.c
+  - path: app_process.c
+
+other_file:
+  - path: "../../../script/connect_create_gbl_image.bat"
+  - path: "../../../script/connect_create_gbl_image.sh"
+
+#------------ Configuration overrides ----------------
+configuration:
+#------------ RAIL init, Channel Config --------------
+  - name: SL_BOARD_ENABLE_VCOM
+    value: "1"
+  - name: SL_IOSTREAM_USART_VCOM_FLOW_CONTROL_TYPE
+    value: "usartHwFlowControlNone"
+    condition:
+      - iostream_usart
+
+#--------------------- Toolchain ------------------------
+toolchain_settings:
+  - option: optimize
+    value: debug
+
+tag:
+  - hardware:
+      device:
+        memory:
+          flash: 152
+          ram: 16
+      board:
+        rf_bands:
+          - any
+        communication:
+          - vcom
+          - pti
+  

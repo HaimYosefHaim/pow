@@ -1,0 +1,24 @@
+What's new in Flex SDK 3.1.2.0
+* Added Security Information section to release notes
+* Selected quality improvements and bug fixes 
+
+What's new in Flex SDK 3.1.1.0
+* Selected quality improvements and bug fixes
+  
+What's new in Flex SDK 3.1.0.0
+* Connect Apps and Stack
+  * EFR32xG21 and MGMx CONNECT GA support
+  * FreeRTOS Support for CONNECT 
+  * Long Range PHY Support for CONNECT
+  * New example: ECDH key exchange
+  * Example ported from Flex 2.7: DMP Light/Switch 
+  * Support for the RAIL-embedded IEEE 802.15.4 PHY
+  
+* RAIL Apps and Library
+  * EFR32xG21 Flex Support 
+  * Wi-SUN Profile and PHYs in Radio Configurator 
+  * New example: SimpleTRX Standards for demonstrating 15.4/BLE usage
+
+
+
+

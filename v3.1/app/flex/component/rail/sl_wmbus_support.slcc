@@ -1,0 +1,37 @@
+id: "sl_wmbus_support"
+label: "Wireless M-bus support"
+package: "Flex"
+description: "Adds minimalist Wireless M-Bus support for coding and decoding packets."
+category: "Flex|RAIL|Utility"
+quality: "production"
+root_path: "app/flex/component/rail/sl_wmbus_support"
+
+provides:
+  - name: sl_wmbus_support
+
+config_file:
+  - path: config/sl_wmbus_support_config.h
+
+requires:
+  - name: "emlib_gpcrc"
+  - name: "emlib_crypto"
+    condition:
+      - device_has_crypto
+  - name: "mbedtls_aes"
+  - name: "mbedtls_cipher_cbc"
+  - name: "device_has_radio"
+source:
+  - path: "sl_wmbus_support.c"
+include:
+  - path: "."
+    file_list:
+    - "path": "sl_wmbus_support.h"
+    - "path": "sl_mbedtls_config.h"
+
+#-------------- Template Contribution ----------------
+template_contribution:
+#---------------- Component Catalog ------------------
+  - name: component_catalog
+    value: wmbus_support
+
+#-------- Hides Component for user in Studio ---------

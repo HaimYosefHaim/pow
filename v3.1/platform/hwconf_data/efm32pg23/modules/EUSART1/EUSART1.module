@@ -1,0 +1,38 @@
+<?xml version='1.0' encoding='ASCII'?>
+<module:DocumentRoot xmlns:module="http://www.silabs.com/ss/hwconfig/module.ecore">
+  <module id="efm32.efm32pg23.eusart1" label="EUSART1" name="EUSART1" description="" version="efm">
+    <properties>
+      <enumProperty label="SDK is taking control over this module" id="EUSART.usedbysdk.BOOL" defaultValueIndex="0" hidden="true" readonly="false">
+        <enumValue label="False" value="0"/>
+        <enumValue label="True" value="1"/>
+      </enumProperty>
+      <enumProperty label="SDK is hiding this module" id="EUSART.hiddenbysdk.BOOL" defaultValueIndex="0" hidden="true" readonly="false">
+        <enumValue label="False" value="0"/>
+        <enumValue label="True" value="1"/>
+      </enumProperty>
+      <enumProperty label="Show advanced options" id="EUSART.showadvanced.BOOL" defaultValueIndex="0" hidden="true" readonly="false">
+        <enumValue label="False" value="0"/>
+        <enumValue label="True" value="1"/>
+      </enumProperty>
+      <enumProperty label="Forcefully enabled in model" id="EUSART.forceenable.BOOL" defaultValueIndex="0" hidden="true" readonly="false">
+        <enumValue label="False" value="0"/>
+        <enumValue label="True" value="1"/>
+      </enumProperty>
+      <stringProperty label="Owned by" id="EUSART.owner.STRING" defaultValue="" hidden="false" readonly="true" transient="true"/>
+      <stringProperty label="Custom name" id="EUSART.customname.STRING" defaultValue="" hidden="false" readonly="false"/>
+    </properties>
+    <propertyCategories>
+      <category label="EUSART1">
+        <subCategory label="">
+          <propertyRef refId="EUSART.usedbysdk.BOOL"/>
+          <propertyRef refId="EUSART.hiddenbysdk.BOOL"/>
+          <propertyRef refId="EUSART.showadvanced.BOOL"/>
+          <propertyRef refId="EUSART.forceenable.BOOL"/>
+          <propertyRef refId="EUSART.owner.STRING"/>
+          <propertyRef refId="EUSART.customname.STRING"/>
+        </subCategory>
+      </category>
+    </propertyCategories>
+    <signals/>
+  </module>
+</module:DocumentRoot>

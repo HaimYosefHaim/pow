@@ -1,0 +1,33 @@
+id: "sl_flex_restrictions_long_range"
+label: "Flex - Restrictions"
+package: "Flex"
+description: "Component provides long_range_profile.restriction configuration files by logic"
+category: "Flex|Common|Utility"
+quality: "production"
+root_path: "app/flex/component/common/sl_flex_restrictions"
+
+
+
+#------- Set provided component name
+provides:
+  - name: "sl_flex_restrictions"
+    allow_multiple: true
+
+requires:
+  - name: "device_has_radio"
+
+#-------- Include restriction config json file --------
+#
+# Long Range profile RAIL restrictions
+#
+config_file:
+  - path: "long_range_profile.restriction"
+    directory: "rail"
+    unless:
+      - "device_sdid_200"
+
+#-------- Hides Component for user in Studio ---------
+ui_hints:
+  visibility: never
+
+

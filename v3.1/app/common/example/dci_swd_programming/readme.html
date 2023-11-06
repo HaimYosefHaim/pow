@@ -1,0 +1,56 @@
+<!DOCTYPE html><html><head><meta charset="utf-8"><title>readme.md</title><style></style></head><body id="preview">
+<h1 class="code-line" data-line-start=0 data-line-end=1><a id="Series_2_DCI_and_SWD_Programming_0"></a>Series 2 DCI and SWD Programming</h1>
+<p class="has-line-data" data-line-start="2" data-line-end="3">This example uses a Wireless Starter Kit (WSTK) with the <a href="https://www.silabs.com/documents/public/user-guides/ug430-brd4182a-user-guide.pdf">BRD4182A Radio Board</a> (EFR32MG22C224F512IM40) to program the Series 2 device through DCI and SWD interface.</p>
+<p class="has-line-data" data-line-start="4" data-line-end="5">The example redirects standard I/O to the virtual serial port (VCOM) of the kit. By default, the serial port setting is 115200 bps and 8-N-1 configuration.</p>
+<p class="has-line-data" data-line-start="6" data-line-end="7">The example has been instrumented with code to count the number of clock cycles spent in SWD programming operations. The results are printed on the VCOM serial port console.</p>
+<h2 class="code-line" data-line-start=8 data-line-end=9><a id="DCI_Programming_8"></a>DCI Programming</h2>
+<p class="has-line-data" data-line-start="10" data-line-end="11">The following DCI operations are supported in this example:</p>
+<ul>
+<li class="has-line-data" data-line-start="12" data-line-end="13">GET SE STATUS</li>
+<li class="has-line-data" data-line-start="13" data-line-end="14">READ SE OTP CONFIGURATION</li>
+<li class="has-line-data" data-line-start="14" data-line-end="15">READ SERIAL NUMBER</li>
+<li class="has-line-data" data-line-start="15" data-line-end="16">READ PUBLIC SIGN KEY</li>
+<li class="has-line-data" data-line-start="16" data-line-end="17">READ PUBLIC COMMAND KEY</li>
+<li class="has-line-data" data-line-start="17" data-line-end="18">ENABLE SECURE DEBUG</li>
+<li class="has-line-data" data-line-start="18" data-line-end="19">DISABLE SECURE DEBUG</li>
+<li class="has-line-data" data-line-start="19" data-line-end="20">LOCK DEVICE</li>
+<li class="has-line-data" data-line-start="20" data-line-end="21">ERASE DEVICE (UNLOCK)</li>
+<li class="has-line-data" data-line-start="21" data-line-end="22">RECOVER SECURE BOOT FAILURE DEVICE</li>
+<li class="has-line-data" data-line-start="22" data-line-end="23">UPGRADE SE FIRMWARE THROUGH DCI</li>
+<li class="has-line-data" data-line-start="23" data-line-end="24">INITIALIZE AES-128 KEY (EFR32xG21)</li>
+<li class="has-line-data" data-line-start="24" data-line-end="25">INITIALIZE PUBLIC SIGN KEY</li>
+<li class="has-line-data" data-line-start="25" data-line-end="26">INITIALIZE PUBLIC COMMAND KEY</li>
+<li class="has-line-data" data-line-start="26" data-line-end="27">INITIALIZE HSE OTP (EFR32xG21A)</li>
+<li class="has-line-data" data-line-start="27" data-line-end="28">INITIALIZE HSE OTP (EFR32xG21B)</li>
+<li class="has-line-data" data-line-start="28" data-line-end="29">INITIALIZE VSE OTP (EFR32xG22)</li>
+<li class="has-line-data" data-line-start="29" data-line-end="31">DISABLE DEVICE ERASE</li>
+</ul>
+<h2 class="code-line" data-line-start=31 data-line-end=32><a id="SWD_Programming_31"></a>SWD Programming</h2>
+<p class="has-line-data" data-line-start="33" data-line-end="34">The following SWD operations are supported in this example:</p>
+<ul>
+<li class="has-line-data" data-line-start="35" data-line-end="36">ERASE MAIN FLASH</li>
+<li class="has-line-data" data-line-start="36" data-line-end="37">PROGRAM MAIN FLASH</li>
+<li class="has-line-data" data-line-start="37" data-line-end="38">ERASE USER DATA</li>
+<li class="has-line-data" data-line-start="38" data-line-end="39">PROGRAM USER DATA</li>
+<li class="has-line-data" data-line-start="39" data-line-end="41">UPGRADE SE FIRMWARE THROUGH APPLICATION FIRMWARE</li>
+</ul>
+<h2 class="code-line" data-line-start=41 data-line-end=42><a id="Getting_Started_41"></a>Getting Started</h2>
+<ol>
+<li class="has-line-data" data-line-start="43" data-line-end="44">Upgrade the kit’s firmware to the latest version (see <code>Adapter Firmware</code> under <a href="https://docs.silabs.com/simplicity-studio-5-users-guide/latest/ss-5-users-guide-about-the-launcher/welcome-and-device-tabs#general-device-information">General Device Information</a> in Simplicity Studio 5 Users Guide).</li>
+<li class="has-line-data" data-line-start="44" data-line-end="45">Open any terminal program and connect to the kit’s VCOM port.</li>
+<li class="has-line-data" data-line-start="45" data-line-end="46">Create this alpha platform example project in the Simplicity IDE (see <a href="https://docs.silabs.com/simplicity-studio-5-users-guide/latest/ss-5-users-guide-getting-started/start-a-project#examples">Examples</a> in Simplicity Studio 5 Users Guide, check <code>ALPHA()</code> checkbox to browse the alpha examples).</li>
+<li class="has-line-data" data-line-start="46" data-line-end="47">Build the example and download it to the kit (see <a href="https://docs.silabs.com/simplicity-studio-5-users-guide/latest/ss-5-users-guide-building-and-flashing/building#simple-build">Simple Build</a> and <a href="https://docs.silabs.com/simplicity-studio-5-users-guide/latest/ss-5-users-guide-building-and-flashing/flashing#flash-programmer">Flash Programmer</a> in Simplicity Studio 5 Users Guide).</li>
+<li class="has-line-data" data-line-start="47" data-line-end="49">Run the example and follow the instructions shown on the console.</li>
+</ol>
+<h2 class="code-line" data-line-start=49 data-line-end=50><a id="Additional_Information_49"></a>Additional Information</h2>
+<ol>
+<li class="has-line-data" data-line-start="51" data-line-end="52">The default clock source is 80 MHz HFRCODPLL.</li>
+<li class="has-line-data" data-line-start="52" data-line-end="54">The default optimization level is <code>Optimize for debugging (-Og)</code> on Simplicity IDE and <code>None</code> on IAR Embedded Workbench.</li>
+</ol>
+<h2 class="code-line" data-line-start=54 data-line-end=55><a id="Resources_54"></a>Resources</h2>
+<p class="has-line-data" data-line-start="56" data-line-end="57"><a href="https://www.silabs.com/documents/public/application-notes/an1190-efr32-secure-debug.pdf">AN1190: Series 2 Secure Debug</a></p>
+<p class="has-line-data" data-line-start="58" data-line-end="59"><a href="https://www.silabs.com/documents/public/application-notes/an1218-secure-boot-with-rtsl.pdf">AN1218: Series 2 Secure Boot with RTSL</a></p>
+<p class="has-line-data" data-line-start="60" data-line-end="61"><a href="https://www.silabs.com/documents/public/application-notes/an1222-efr32xg2x-production-programming.pdf">AN1222: Production Programming of Series 2 Devices</a></p>
+<p class="has-line-data" data-line-start="62" data-line-end="63"><a href="https://www.silabs.com/documents/public/application-notes/an1247-efr32-secure-vault-tamper.pdf">AN1247: Anti-Tamper Protection Configuration and Use</a></p>
+<p class="has-line-data" data-line-start="64" data-line-end="65"><a href="https://www.silabs.com/documents/public/application-notes/an1303-efr32-dci-swd-programming.pdf">AN1303: Series 2 DCI and SWD Programming</a></p>
+</body></html>
